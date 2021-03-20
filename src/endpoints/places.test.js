@@ -13,13 +13,13 @@ describe('fetch places', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
-            .end((err, res) => { /*eslint-disable-line */
+            .end((err, res) => {
                 if (err) {
                     return done(err);
                 }
                 expect(res.body.data).toBeInstanceOf(Object);
                 expect(res.body.data.places.length).toEqual(2);
-                done();
+                return done();
             });
     });
 });

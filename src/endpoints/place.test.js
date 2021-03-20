@@ -64,12 +64,12 @@ describe('fetch place', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
-            .end((err, res) => { /*eslint-disable-line */
+            .end((err, res) => {
                 if (err) {
                     return done(err);
                 }
                 expect(res.body.data.place).toBeInstanceOf(Object);
-                done();
+                return done();
             });
     });
 
@@ -83,7 +83,7 @@ describe('fetch place', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
-            .end((err, res) => { /*eslint-disable-line */
+            .end((err, res) => {
                 if (err) {
                     return done(err);
                 }
@@ -91,7 +91,7 @@ describe('fetch place', () => {
                 expect(res.body.errors.length).toEqual(1);
                 expect(res.body.errors[0].message).toEqual('Request failed with status code 404');
                 expect(res.body.data.place).toEqual(null);
-                done();
+                return done();
             });
     });
 });
