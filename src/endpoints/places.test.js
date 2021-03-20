@@ -1,19 +1,19 @@
-const app = require("../app");
-const supertest = require("supertest");
+const supertest = require('supertest');
+const app = require('../app');
 
 const request = supertest(app);
 
-describe("fetch places", () => {
-    test("it should return 2 mocked place ids", async (done) => {
+describe('fetch places', () => {
+    it('returns 2 mocked place ids', async (done) => {
         request
-            .post("/graphql")
+            .post('/graphql')
             .send({
-                query: "{ places }",
+                query: '{ places }',
             })
-            .set("Accept", "application/json")
-            .expect("Content-Type", /json/)
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
             .expect(200)
-            .end(function (err, res) {
+            .end((err, res) => { /*eslint-disable-line */
                 if (err) {
                     return done(err);
                 }

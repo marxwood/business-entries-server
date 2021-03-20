@@ -54,7 +54,7 @@ function queryFactory(id) {
 }
 
 describe('fetch place', () => {
-    test('it should return place by id', async (done) => {
+    it('returns a place by id', async (done) => {
         const id = 'GXvPAor1ifNfpF0U5PTG0w';
         request
             .post('/graphql')
@@ -73,7 +73,7 @@ describe('fetch place', () => {
             });
     });
 
-    test('it should return error for non-existing id', async (done) => {
+    it('returns an error for non-existing id', async (done) => {
         const id = 'non-existing-place-id';
         request
             .post('/graphql')
