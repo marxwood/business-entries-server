@@ -10,7 +10,29 @@ const schema = buildSchema(`
     type Place {
         displayed_what: String!
         displayed_where: String!
+        place_feedback_summary: PlaceFeedbackSummary!
+        addresses: [Address!]!
         opening_hours: OpeningHours!
+    }
+
+    type PlaceFeedbackSummary {
+        positive_recommendation_percentage: Int!
+    }
+
+    type Address {
+        where: Where!
+    }
+
+    type Where {
+        geography: Geography!
+    }
+
+    type Geography {
+        location: Location!
+    }
+
+    type Location {
+        latlon: String!
     }
 
     type OpeningHours {

@@ -9,6 +9,18 @@ function queryFactory(id) {
         place(id: "${id}") {
             displayed_what
             displayed_where
+            place_feedback_summary {
+                positive_recommendation_percentage
+            }
+            addresses {
+                where {
+                    geography {
+                        location {
+                            latlon
+                        } 
+                    }
+                }
+            }
             opening_hours {
                 days {
                     monday {

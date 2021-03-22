@@ -8,6 +8,11 @@ describe('ensure static schema snapshot', () => {
     it('contains types', () => {
         expect(schema).toContain('type Query');
         expect(schema).toContain('type Place');
+        expect(schema).toContain('type PlaceFeedbackSummary');
+        expect(schema).toContain('type Address');
+        expect(schema).toContain('type Where');
+        expect(schema).toContain('type Geography');
+        expect(schema).toContain('type Location');
         expect(schema).toContain('type OpeningHours');
         expect(schema).toContain('type Days');
         expect(schema).toContain('type OpeningHoursRange');
